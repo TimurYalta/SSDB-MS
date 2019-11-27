@@ -1,0 +1,41 @@
+[
+    {
+        "id": "12421rfaksjsa",
+        "mobile": false,
+        "location": [
+            {
+                "latitude": "1",
+                "altitude": "3",
+                "longitude": "2"
+            }
+        ],
+        "type": "server",
+        "name": "board12safasf"
+    },
+    {
+        "id": "sffsa",
+        "mobile": false,
+        "location": [
+            {
+                "latitude": "1",
+                "altitude": "3",
+                "longitude": "2"
+            }
+        ],
+        "type": "server",
+        "name": "afaffas"
+    },
+    {
+        "id": "asf",
+        "mobile": false,
+        "location": [
+            {
+                "latitude": "1",
+                "altitude": "3",
+                "longitude": "2"
+            }
+        ],
+        "type": "server",
+        "name": "21421sf"
+    }
+]

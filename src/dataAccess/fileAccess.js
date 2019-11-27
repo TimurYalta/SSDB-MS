@@ -3,15 +3,14 @@ const path = require('path');
 const rootDir = require('../utils/path');
 const util = require('util');
 
-// Convert fs.readFile into Promise version of same    
 const readFile = util.promisify(fs.readFile);
 const writeToFile = util.promisify(fs.writeFile);
 
-const readNotesFromFile = () => readFile(path.join(rootDir, 'test_data' ,'notes.txt'));
+const readBoardsFromFile = () => readFile(path.join(rootDir, 'test_data' ,'boards.txt'));
 
-const writeNotesToFile = (notes) => writeToFile(path.join(rootDir, 'test_data' ,'notes.txt'), notes);
+const writeNotesToFile = (notes) => writeToFile(path.join(rootDir, 'test_data' ,'boards.txt'), notes);
 
 module.exports = {
-    readNotesFromFile,
+    readBoardsFromFile,
     writeNotesToFile
 };
