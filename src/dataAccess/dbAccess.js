@@ -7,29 +7,36 @@
 //     password: '3tEJBW8TRz',
 //     database: '	sql7312271'
 // })
-const pool = require('../dbUtils/pool');
+const pool = require('../utils/db/pool');
 
 
 
-const getAllNotesFromDB = () => {
+const getAllBoardsFromDB = () => {
     let results;
     console.log(213);
-    return pool.query(
-                "SELECT * FROM notes;",
-                (err2, recs, fields)=>{
-                    console.log("anythign")
-                    console.log(recs);
-                    if(!err2){
-                        results = recs;
-                    }
-                    else{
-                        console.log(err2);
-                    }
-                }
-            );
-        
+    return pool.query("SELECT * FROM boards;");
+    // return new Promise((resolve,reject) => {
+    //     pool.query(
+    //         "SELECT * FROM boards;",
+    //         (err2, recs, fields) => {
+    //             // console.log("anythign")
+    //             // console.log(recs);
+    //             if (!err2) {
+    //                 results = recs;
+    //                 console.log(recs);
+    //                 resolve(recs);
+    //                 return recs;
+    //             }
+    //             else {
+    //                 reject(err2);
+    //                 console.log(err2);
+    //             }
+    //         }
+    //     );
+    // });
+
     // return results;
 }
 
 
-module.exports = {getAllNotesFromDB};
+module.exports = { getAllBoardsFromDB };

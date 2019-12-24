@@ -1,19 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const boardsServices = require('../services/boardsDBService');
+const boardsServices = require('../services/boardsFileService');
 
 
 router.get('/all', async (req, res, next) => {
     try{
-        const boards = await boardsServices.getAllBoards();
-        console.log(boards);
-        for (el of boards){
 
-        }
-        res.render('boards', {page:'Boards', menuId:'home', title: 'SSDB | Boards', boards});
-        // res.render('index', {page:'Boards', menuId:'home', title: 'SSDB | Boards'});
-        // res.json(boards);
-        // res.end();x  `
+        res.render('index', {page:'Boards', menuId:'home', title: 'SSDB | Boards'});
+        // res.json(await boardsServices.getAllBoards()).status(200);
     }
     catch(err){
         console.log("Some bad stuff happened");
@@ -38,6 +32,3 @@ router.get('/info/:id', function (req, res, next) {
 
 
 module.exports = router;
-
-
-// TODO: Create centalized error handler.

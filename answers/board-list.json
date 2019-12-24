@@ -1,0 +1,245 @@
+{
+    "boards": [
+        {
+            "name": "container-1",
+            "uuid": "c3e5e374-2af0-4dc1-b96e-c3ab66d1c7a8",
+            "links": [
+                {
+                    "href": "http://192.168.22.101:8812/v1/boards/c3e5e374-2af0-4dc1-b96e-c3ab66d1c7a8",
+                    "rel": "self"
+                },
+                {
+                    "href": "http://192.168.22.101:8812/boards/c3e5e374-2af0-4dc1-b96e-c3ab66d1c7a8",
+                    "rel": "bookmark"
+                }
+            ],
+            "fleet": null,
+            "agent": "wagent2",
+            "connectivity": {
+                "mac": "e2:b9:92:93:35:bc",
+                "iface": "d1-eth0",
+                "local_ip": "10.0.0.251"
+            },
+            "status": "offline",
+            "lr_version": "0.4.17",
+            "location": [
+                {
+                    "longitude": "0.0",
+                    "latitude": "0.0",
+                    "altitude": "0.0",
+                    "updated_at": null
+                }
+            ],
+            "code": "d150001",
+            "session": null,
+            "wstun_ip": "212.189.207.237",
+            "type": "server"
+        },
+        {
+            "name": "container-2",
+            "uuid": "a59d1b02-22d7-4308-99af-8848300c8430",
+            "links": [
+                {
+                    "href": "http://192.168.22.101:8812/v1/boards/a59d1b02-22d7-4308-99af-8848300c8430",
+                    "rel": "self"
+                },
+                {
+                    "href": "http://192.168.22.101:8812/boards/a59d1b02-22d7-4308-99af-8848300c8430",
+                    "rel": "bookmark"
+                }
+            ],
+            "fleet": null,
+            "agent": "wagent1",
+            "connectivity": {
+                "mac": "fa:48:23:98:0f:17",
+                "iface": "d2-eth0",
+                "local_ip": "10.0.0.252"
+            },
+            "status": "offline",
+            "lr_version": "0.4.17",
+            "location": [
+                {
+                    "longitude": "0.0",
+                    "latitude": "0.0",
+                    "altitude": "0.0",
+                    "updated_at": null
+                }
+            ],
+            "code": "d250002",
+            "session": null,
+            "wstun_ip": "212.189.207.236",
+            "type": "server"
+        },
+        {
+            "name": "arif-rasp",
+            "uuid": "bfa786a0-c82c-480c-9766-05ebed781835",
+            "links": [
+                {
+                    "href": "http://192.168.22.101:8812/v1/boards/bfa786a0-c82c-480c-9766-05ebed781835",
+                    "rel": "self"
+                },
+                {
+                    "href": "http://192.168.22.101:8812/boards/bfa786a0-c82c-480c-9766-05ebed781835",
+                    "rel": "bookmark"
+                }
+            ],
+            "fleet": null,
+            "agent": "wagent2",
+            "connectivity": {
+                "mac": "b8:27:eb:8f:c7:bc",
+                "iface": "wlan0",
+                "local_ip": "192.168.44.131"
+            },
+            "status": "offline",
+            "lr_version": "0.4.17",
+            "location": [
+                {
+                    "longitude": "0.0",
+                    "latitude": "0.0",
+                    "altitude": "0.0",
+                    "updated_at": null
+                }
+            ],
+            "code": "98765",
+            "session": null,
+            "wstun_ip": "212.189.207.237",
+            "type": "server"
+        },
+        {
+            "name": "arif-server",
+            "uuid": "962a1ad3-efa7-4075-9c59-483bfd332c81",
+            "links": [
+                {
+                    "href": "http://192.168.22.101:8812/v1/boards/962a1ad3-efa7-4075-9c59-483bfd332c81",
+                    "rel": "self"
+                },
+                {
+                    "href": "http://192.168.22.101:8812/boards/962a1ad3-efa7-4075-9c59-483bfd332c81",
+                    "rel": "bookmark"
+                }
+            ],
+            "fleet": null,
+            "agent": "wagent2",
+            "connectivity": {},
+            "status": "offline",
+            "lr_version": "0.4.17",
+            "location": [
+                {
+                    "longitude": "0.0",
+                    "latitude": "0.0",
+                    "altitude": "0.0",
+                    "updated_at": null
+                }
+            ],
+            "code": "121212",
+            "session": null,
+            "wstun_ip": "212.189.207.237",
+            "type": "server"
+        },
+        {
+            "name": "my-pc",
+            "uuid": "ebc71a50-51a3-4bd9-9b5c-e5c180e50d41",
+            "links": [
+                {
+                    "href": "http://192.168.22.101:8812/v1/boards/ebc71a50-51a3-4bd9-9b5c-e5c180e50d41",
+                    "rel": "self"
+                },
+                {
+                    "href": "http://192.168.22.101:8812/boards/ebc71a50-51a3-4bd9-9b5c-e5c180e50d41",
+                    "rel": "bookmark"
+                }
+            ],
+            "fleet": null,
+            "agent": "wagent2",
+            "connectivity": {
+                "mac": "d8:a2:5e:8f:13:e9",
+                "iface": "wlp2s0",
+                "local_ip": "172.17.2.242"
+            },
+            "status": "offline",
+            "lr_version": "0.4.8",
+            "location": [
+                {
+                    "longitude": "0.0",
+                    "latitude": "0.0",
+                    "altitude": "0.0",
+                    "updated_at": null
+                }
+            ],
+            "code": "111111",
+            "session": null,
+            "wstun_ip": "212.189.207.237",
+            "type": "server"
+        },
+        {
+            "name": "container-3",
+            "uuid": "18e9dfc5-8946-414f-a650-0e00d96d351b",
+            "links": [
+                {
+                    "href": "http://192.168.22.101:8812/v1/boards/18e9dfc5-8946-414f-a650-0e00d96d351b",
+                    "rel": "self"
+                },
+                {
+                    "href": "http://192.168.22.101:8812/boards/18e9dfc5-8946-414f-a650-0e00d96d351b",
+                    "rel": "bookmark"
+                }
+            ],
+            "fleet": null,
+            "agent": "wagent1",
+            "connectivity": {
+                "mac": "82:73:b4:16:a8:a9",
+                "iface": "d3-eth0",
+                "local_ip": "10.0.0.253"
+            },
+            "status": "offline",
+            "lr_version": "0.4.17",
+            "location": [
+                {
+                    "longitude": "0.0",
+                    "latitude": "0.0",
+                    "altitude": "0.0",
+                    "updated_at": null
+                }
+            ],
+            "code": "d350003",
+            "session": null,
+            "wstun_ip": "212.189.207.236",
+            "type": "gateway"
+        },
+        {
+            "name": "antonino-rasp",
+            "uuid": "5067e7c1-8ac2-4689-868f-fb54808bd4cf",
+            "links": [
+                {
+                    "href": "http://192.168.22.101:8812/v1/boards/5067e7c1-8ac2-4689-868f-fb54808bd4cf",
+                    "rel": "self"
+                },
+                {
+                    "href": "http://192.168.22.101:8812/boards/5067e7c1-8ac2-4689-868f-fb54808bd4cf",
+                    "rel": "bookmark"
+                }
+            ],
+            "fleet": null,
+            "agent": "wagent2",
+            "connectivity": {
+                "mac": "b8:27:eb:b0:db:79",
+                "iface": "eth0",
+                "local_ip": "172.17.6.139"
+            },
+            "status": "offline",
+            "lr_version": "0.4.17",
+            "location": [
+                {
+                    "longitude": "0.0",
+                    "latitude": "0.0",
+                    "altitude": "0.0",
+                    "updated_at": null
+                }
+            ],
+            "code": "909090",
+            "session": null,
+            "wstun_ip": "212.189.207.237",
+            "type": "server"
+        }
+    ]
+}

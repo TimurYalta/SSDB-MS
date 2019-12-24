@@ -4,13 +4,14 @@ const path = require("path");
 const rootDir = require('../utils/path');
 
 
-const getNotes = async () => {
+const getAllBoards = async () => {
     console.log("Getting all notes from file");
     try {
-        const readFromDB = await dbAccess.getAllNotesFromDB();
+        const readFromDB = await dbAccess.getAllBoardsFromDB();
         console.log(readFromDB);
-        const convertedToObject = JSON.parse(await  readFromDB.json());
-        return convertedToObject;
+        console.log(2134);
+        // const convertedToObject = JSON.parse(await readFromDB.json());
+        return readFromDB;
 
     }
     catch (e) {
@@ -37,6 +38,6 @@ const getNotes = async () => {
 
 
 module.exports = {
-    getNotes,
+    getAllBoards
     // putNewNoteToFile
 }

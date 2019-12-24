@@ -2,7 +2,7 @@ const fileAccess = require('../dataAccess/fileAccess');
 const fs = require("fs");
 const path = require("path");
 const rootDir = require('../utils/path');
-const ExtendedError = require('../errors/ExtendedError');
+const ExtendedError = require('../utils/errors/ExtendedError');
 
 
 const getAllBoards = async () => {

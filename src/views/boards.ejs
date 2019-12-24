@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head.ejs'); %>
+</head>
+
+<body>
+    <%- include('partials/header.ejs');  %>
+    <table>
+        <% for (el of boards) { %>
+            <tr>
+                <td>
+                    <%= el.name %>
+                </td>
+                <td>
+                    <%= el.id%>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+
+</html>

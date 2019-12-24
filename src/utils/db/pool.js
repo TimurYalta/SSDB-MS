@@ -4,11 +4,11 @@ const util = require("util");
 
 const pool = mysql.createPool({
     connectionLimit: 10,
-    host: 'sql7.freemysqlhosting.net',
-    user: 'sql7312271',
-    password: '3tEJBW8TRz',
-    database: 'sql7312271'
-})
+    host: 'remotemysql.com',
+    user: 'wC73pny6kv',
+    password: '1iPHTDOaIi',
+    database: 'wC73pny6kv'
+});
 
 pool.getConnection((err, connection) => {
     if (err) {
