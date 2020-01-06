@@ -1,42 +1,47 @@
-// const mysql = require('mysql');
-
-// const pool = mysql.createPool({
-//     connectionLimit: 10,
-//     host: 'sql7.freemysqlhosting.net',
-//     user: 'sql7312271',
-//     password: '3tEJBW8TRz',
-//     database: '	sql7312271'
-// })
 const pool = require('../utils/db/pool');
 
-
-
-const getAllBoardsFromDB = () => {
-    let results;
-    console.log(213);
-    return pool.query("SELECT * FROM boards;");
-    // return new Promise((resolve,reject) => {
-    //     pool.query(
-    //         "SELECT * FROM boards;",
-    //         (err2, recs, fields) => {
-    //             // console.log("anythign")
-    //             // console.log(recs);
-    //             if (!err2) {
-    //                 results = recs;
-    //                 console.log(recs);
-    //                 resolve(recs);
-    //                 return recs;
-    //             }
-    //             else {
-    //                 reject(err2);
-    //                 console.log(err2);
-    //             }
-    //         }
-    //     );
-    // });
-
-    // return results;
+const getDomainById = (id) => {
+    return pool.query("SELECT * FROM domains WHERE id ="+id);
 }
 
+const getDomainNameByID = (id) => {
+    return pool.query(`SELECT name FROM domains WHERE id='${id}'`);
+};
 
-module.exports = { getAllBoardsFromDB };
+const clearDomainDevices=(id) => {
+    return pool.query(`DELETE FROM domain_devices WHERE domain_id='${id}'`);
+};
+
+const setDomainDevices = (string) => {
+    return pool.query(`INSERT INTO domain_devices (domain_id, board_id, board_name) VALUES ${string}`);
+};
+
+const getBoardById = (id) => {
+    return pool.query("SELECT * FROM boards WHERE id ="+id);
+}
+
+const getDomainDevicesByID = (id) => {
+    return pool.query(`SELECT board_id FROM domain_devices WHERE domain_id ='${id}'`)
+} 
+
+const getAllBoardsFromDB = () => {
+    return pool.query("SELECT * FROM boards;");
+}
+
+const getAllDomainsFromDB = () => {
+    return pool.query(`SELECT * from domains`);
+};
+
+const writeDomainToDB = (cols, vals) => {
+    return pool.query(`INSERT INTO domains (${cols}) VALUES  (${vals})`);
+}
+
+module.exports = { 
+    setDomainDevices,
+    clearDomainDevices,
+    getAllBoardsFromDB,
+    writeDomainToDB,
+    getAllDomainsFromDB,
+    getDomainNameByID,
+    getDomainDevicesByID
+};

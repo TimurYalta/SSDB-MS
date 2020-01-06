@@ -3,7 +3,6 @@
 
 <head>
     <%- include('partials/head.ejs'); %>
-    <link  type="text/css" href="public/css/styles.css"></link>
 </head>
 
 <body>
@@ -12,9 +11,10 @@
         <tr>
             <th>Name</th>
             <th>ID</th>
-            <th></th>
+            <th>Port</th>
+            <th>Fleet ID</th>
         </tr>
-        <% for (el of boards) { %>
+        <% for (el of domains) { %>
             <tr>
                 <td>
                     <%= el.name %>
@@ -23,7 +23,13 @@
                     <%= el.id%>
                 </td>
                 <td>
-                    <a href="/boards/info/<%=el.id%>">More</a>
+                    <%= el.port%>
+                </td>
+                <td>
+                    <%=el.fleet_id%>
+                </td>
+                <td>
+                    <a href="/domains/edit/<%=el.id%>">Edit device list</a>
                 </td>
             </tr>
         <% } %>

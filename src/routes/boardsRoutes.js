@@ -7,9 +7,9 @@ router.get('/all', async (req, res, next) => {
     try{
         const boards = await boardsServices.getAllBoards();
         console.log(boards);
-        for (el of boards){
+        // for (el of boards){
 
-        }
+        // }
         res.render('boards', {page:'Boards', menuId:'home', title: 'SSDB | Boards', boards});
         // res.render('index', {page:'Boards', menuId:'home', title: 'SSDB | Boards'});
         // res.json(boards);

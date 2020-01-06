@@ -7,20 +7,20 @@
 
 <body>
     <%- include('partials/header.ejs');  %>
-    <form action="" method="post">
+    <form action="create" method="post">
         <label for="name">
             Name:
-            <input name="name" type="text" maxlength="100">
+            <input name="name" required type="text" maxlength="100">
         </label>
         <br>
         <label>
             Fleet:
-            <input name="fleet" type="text">
+            <input name="fleet_id" required type="text">
         </label>
         <br>
         <label>
             Port:
-            <input name="port" type ="text" maxlength="10" >
+            <input name="port" required type ="text" maxlength="10" >
         </label>
         
             <!-- <input type=""> -->
