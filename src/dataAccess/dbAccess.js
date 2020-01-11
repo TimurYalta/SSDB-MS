@@ -1,7 +1,7 @@
 const pool = require('../utils/db/pool');
 
 const getDomainById = (id) => {
-    return pool.query("SELECT * FROM domains WHERE id ="+id);
+    return pool.query(`SELECT * FROM domains WHERE id ='${id}'`);
 }
 
 const getDomainNameByID = (id) => {
@@ -43,5 +43,6 @@ module.exports = {
     writeDomainToDB,
     getAllDomainsFromDB,
     getDomainNameByID,
-    getDomainDevicesByID
+    getDomainDevicesByID,
+    getDomainById
 };

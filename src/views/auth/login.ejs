@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs'); %>
+    <link type="text/css" href="public/css/styles.css">
+    </link>
+</head>
+
+<body>
+    <h1>SSDB MS Login</h1>
+
+    <form action="login" method="post">
+        <label for="username">
+            Username:
+            <input name="name" required type="text" maxlength="100">
+        </label>
+        <br>
+        <label>
+            Password:
+            <input name="password" required type="password" maxlength="10">
+        </label>
+        <!-- <input type=""> -->
+        <br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs'); %>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs');  %>
+
+    <div>
+        <b>Name:</b>
+        <%= info.name %>
+    </div>
+    <div>
+        <b>
+            ID:
+        </b>
+        <%= info.id%>
+    </div>
+    <div>
+        <b>
+            Port:
+        </b>
+        <%= info.port%>
+    </div>
+    <div>
+        <b>
+            Fleet ID:
+        </b>
+        <%=info.fleet_id%>
+    </div>
+    <div>
+        <a href="/domains/edit/<%=info.id%>">Edit device list</a>
+    </div>
+
+    <button onclick="if(confirm('Are you sure you want to delete it?')){location.href = '/boards/all'}">
+        Delete domain
+    </button>
+</body>
+
+</html>

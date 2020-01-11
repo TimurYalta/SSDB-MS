@@ -25,7 +25,7 @@ const getAllDomains = async () => {
 
 const updateDomainDeviceList = async (id, res) => {
     try {
-        if(!res.devices){
+        if (!res.devices) {
             return dbAccess.clearDomainDevices(id);
         }
         const devices = res.devices.map(JSON.parse);
@@ -35,7 +35,7 @@ const updateDomainDeviceList = async (id, res) => {
         await dbAccess.clearDomainDevices(id);
         return await dbAccess.setDomainDevices(strings);
     }
-    catch(e){
+    catch (e) {
         console.log(123);
         throw e;
     }
@@ -60,6 +60,22 @@ const getDevicesByID = async (id) => {
         console.log(e);
     }
 };
+
+const getDomain = async (id) => {
+    try {
+        const domainInfo = await dbAccess.getDomainById(id);
+        if (domainInfo.length > 0) {
+            return domainInfo[0];
+        }
+        else{
+            throw new Error("No such domain");
+        }
+        return domainInfo;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 
 
 const putNewDomainToDB = async (domain) => {
@@ -91,6 +107,6 @@ module.exports = {
     getNameByID,
     getDevicesByID,
     getDevicesByID,
-    updateDomainDeviceList
-    // putNewNoteToFile
+    updateDomainDeviceList,
+    getDomain
 }

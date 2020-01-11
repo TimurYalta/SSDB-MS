@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs'); %>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs');  %>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Port</th>
+            <th>Fleet ID</th>
+        </tr>
+        <% for (el of domains) { %>
+            <tr>
+                <td>
+                    <%= el.name %>
+                </td>
+                <td>
+                    <%= el.id%>
+                </td>
+                <td>
+                    <%= el.port%>
+                </td>
+                <td>
+                    <%=el.fleet_id%>
+                </td>
+                <td>
+                    <a href="/domains/info/<%=el.id%>">More info</a>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+    <input type="button" onclick="location.href='/domains/create';" value="Create new" />
+</body>
+
+</html>
