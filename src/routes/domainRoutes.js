@@ -5,8 +5,9 @@ const domainServices = require('../services/domainsDBService');
 
 router.get('/all', async (req, res, next) => {
     try {
+        console.log(req.user);
         const domains = await domainServices.getAllDomains();
-        console.log(domains);
+        // console.log(domains);
         res.render('domains/domains', { page: 'Domains', menuId: 'home', title: 'SSDB | Domains', domains });
         // res.render('index', {page:'Boards', menuId:'home', title: 'SSDB | Boards'});
         // res.json(boards);

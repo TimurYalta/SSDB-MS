@@ -1,13 +1,14 @@
 const mysql = require('mysql')
 const util = require("util");
 
+console.log(process.env.DB_NAME);
 
 const pool = mysql.createPool({
     connectionLimit: 10,
-    host: 'remotemysql.com',
-    user: 'wC73pny6kv',
-    password: '1iPHTDOaIi',
-    database: 'wC73pny6kv'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password:process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
 });
 
 pool.getConnection((err, connection) => {

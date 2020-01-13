@@ -70,7 +70,6 @@ const getDomain = async (id) => {
         else{
             throw new Error("No such domain");
         }
-        return domainInfo;
     } catch (error) {
         console.log(error);
     }

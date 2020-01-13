@@ -8,22 +8,37 @@
 </head>
 
 <body>
-    <h1>SSDB MS Login</h1>
-    <% if(messages.error){%>
-        <%=messages.error%>
-    <%}%>
-    <form action="login" method="post">
+    
+    <%- include('../partials/header.ejs'); %>
+    <form action="create" method="post">
         <label for="username">
             Username:
             <input name="username" required type="text" maxlength="100">
         </label>
         <br>
+        <label for="email">
+            Email:
+            <input name="email" required type="email" maxlength="100">
+        </label>
+        <br>
+        
         <label>
             Password:
             <input name="password" required type="password" maxlength="10">
         </label>
         <!-- <input type=""> -->
         <br>
+
+        <div>
+            <label >
+                <input name="rights" type="radio" value=0>
+                Global admin
+            </label>
+            <label >
+                <input name="rights" type="radio" value=1>
+                Domain admin
+            </label>
+        </div>
         <button type="submit">Save</button>
     </form>
 </body>

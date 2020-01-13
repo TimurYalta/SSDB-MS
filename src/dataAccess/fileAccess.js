@@ -6,11 +6,11 @@ const util = require('util');
 const readFile = util.promisify(fs.readFile);
 const writeToFile = util.promisify(fs.writeFile);
 
-const readBoardsFromFile = () => readFile(path.join(rootDir, 'test_data' ,'boards.txt'));
+const readTokenFromFile = () => readFile(path.join(rootDir,'authtoken'));
 
-const writeNotesToFile = (notes) => writeToFile(path.join(rootDir, 'test_data' ,'boards.txt'), notes);
+const writeTokenToFile = (token) => writeToFile(path.join(rootDir ,'authtoken'), token);
 
 module.exports = {
-    readBoardsFromFile,
-    writeNotesToFile
+    readTokenFromFile,
+    writeTokenToFile
 };

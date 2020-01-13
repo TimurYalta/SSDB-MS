@@ -29,12 +29,29 @@ const getAllBoardsFromDB = () => {
 }
 
 const getAllDomainsFromDB = () => {
-    return pool.query(`SELECT * from domains`);
+    return pool.query(`SELECT * FROM domains`);
 };
 
 const writeDomainToDB = (cols, vals) => {
     return pool.query(`INSERT INTO domains (${cols}) VALUES  (${vals})`);
 }
+
+const getUserByUserName = (username) => {
+    return pool.query(`SELECT * FROM users where username = '${username}'`);
+};
+
+const getUserByID = (id) => {
+    return pool.query(`SELECT * FROM users where id = '${id}'`);
+};
+
+const writeUserToDB = (cols,vals) => {
+    return pool.query(`INSERT INTO users (${cols}) VALUES  (${vals})`);
+};
+
+const getAllUsers = () =>{
+    return pool.query(`SELECT * FROM users`);
+};
+
 
 module.exports = { 
     setDomainDevices,
@@ -44,5 +61,9 @@ module.exports = {
     getAllDomainsFromDB,
     getDomainNameByID,
     getDomainDevicesByID,
-    getDomainById
+    getDomainById,
+    getUserByUserName,
+    getUserByID,
+    writeUserToDB,
+    getAllUsers
 };
