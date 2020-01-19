@@ -7,15 +7,15 @@
 
 <body>
     <%- include('../partials/header.ejs');  %>
-    <h2><%= domainName[0].name%></h2>
+    <h2><%= user[0].username%></h2>
     <form method="post">
-        <%for(el of boards){%>
+        <%for(el of domains){%>
             <label>
                 <input 
                     type="checkbox" 
-                    name="devices[]" 
-                    value='{"id":"<%=el.uuid%>", "name": "<%=el.name%>"}'
-                    <%if (domainDevices.filter(elem=>(elem.board_id == el.uuid)).length>0){%>
+                    name="domains[]" 
+                    value='{"domain_id":"<%=el.id%>", "domain_name": "<%=el.name%>"}'
+                    <%if (userDomains.filter(elem=>(elem.domain_id == el.id)).length>0){%>
                         checked
                     <%}%>
                 >
@@ -23,7 +23,7 @@
             </label>
             <br>
         <%}%>
-        <input type="button" onclick="location.href='/domains/all';" value="Cancel" />
+        <input type="button" onclick="location.href='/users/all';" value="Cancel" />
         <button type="submit">Save</button>
     </form>
 </body>

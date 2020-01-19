@@ -11,7 +11,6 @@ const getUserByUserName = async (userName) => {
         if (readFromDB.length == 0) {
             return null;
         }
-        console.log(readFromDB);
         return readFromDB[0];
 
     }

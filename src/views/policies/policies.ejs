@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs'); %>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs');  %>
+
+    <!-- <div>
+        <h1>Extreme Policies</h1>
+    </div> -->
+    
+<hr>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>DownloadLink</th>
+        </tr>
+        <%for (el of policies){%>
+            <tr>
+                <td><%=el.name%></td>
+                <td><a
+                    download="<%=el.name%>.py" 
+                    href="/policies/download/<%=el.id%>">Link</a></td>
+            </tr>
+        <%}%>
+    </table>
+<hr>
+
+
+
+    <form method="POST"
+        action = "/policies/create"
+        encType="multipart/form-data"
+    >
+        <label for="name">
+            Name:
+        <input name="name" type="text">
+        <br>
+        File:
+        <input name="file" type="file">
+        <br>
+        <button type="submit">
+            Save
+        </button>
+    </form>
+</body>
+
+</html>

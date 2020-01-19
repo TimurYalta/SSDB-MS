@@ -1,4 +1,5 @@
 const dbAccess = require('../dataAccess/dbAccess');
+const s4tAccess = require('../dataAccess/s4tAccess');
 const fs = require("fs");
 const path = require("path");
 const rootDir = require('../utils/path');
@@ -7,9 +8,7 @@ const rootDir = require('../utils/path');
 const getAllBoards = async () => {
     console.log("Getting all notes from file");
     try {
-        const readFromDB = await dbAccess.getAllBoardsFromDB();
-        console.log(readFromDB);
-        console.log(2134);
+        const readFromDB = await s4tAccess.getAllBoards();
         // const convertedToObject = JSON.parse(await readFromDB.json());
         return readFromDB;
 

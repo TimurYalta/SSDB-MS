@@ -4,14 +4,12 @@ const path = require("path");
 const rootDir = require('../utils/path');
 const uuid = require('uuid/v4');
 const moment = require('moment');
+const fileAccess = require('../dataAccess/fileAccess');
 
 const getAllDomains = async () => {
     console.log("Getting all notes from file");
     try {
         const readFromDB = await dbAccess.getAllDomainsFromDB();
-        console.log(readFromDB);
-        console.log(2134);
-        // const convertedToObject = JSON.parse(await readFromDB.json());
         return readFromDB;
 
     }
@@ -44,7 +42,6 @@ const updateDomainDeviceList = async (id, res) => {
 const getNameByID = async (id) => {
     try {
         const name = await dbAccess.getDomainNameByID(id);
-        console.log(name)
         return name;
     }
     catch (e) {
@@ -67,7 +64,7 @@ const getDomain = async (id) => {
         if (domainInfo.length > 0) {
             return domainInfo[0];
         }
-        else{
+        else {
             throw new Error("No such domain");
         }
     } catch (error) {
@@ -85,9 +82,6 @@ const putNewDomainToDB = async (domain) => {
         domain.change_date = currentTS;
         const cols = Object.keys(domain).join(",");
         const rows = "'" + Object.values(domain).join("','") + "'";
-
-        console.log(cols);
-        console.log(rows);
         await dbAccess.writeDomainToDB(cols, rows);
         return new Promise((resolve) => { resolve() });
 
@@ -98,7 +92,42 @@ const putNewDomainToDB = async (domain) => {
     }
 };
 
+const addPolicy = async (domainID, policyName, file) => {
+    try {
+        const id = uuid();
+        await fileAccess.writePolicyToFile(id, file.data);
+        const string = `('${domainID}','${id}', '${policyName}' )`;
+        await dbAccess.writePolicy(string);
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+}
 
+const getPolicies = async (id) => {
+    try {
+        const policies = await dbAccess.getDomainPolicies(id);
+        return policies;
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+};
+
+const getPolicyByID = async (id) => {
+    try {
+        
+        const name = await dbAccess.getPolicyByID(id);
+        // console.log(name);
+        if (name.length==0){
+            throw new Error("No such record");
+        }
+        return name;
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+};
 
 module.exports = {
     getAllDomains,
@@ -107,5 +136,8 @@ module.exports = {
     getDevicesByID,
     getDevicesByID,
     updateDomainDeviceList,
-    getDomain
+    getDomain,
+    addPolicy,
+    getPolicies,
+    getPolicyByID
 }

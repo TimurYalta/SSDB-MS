@@ -9,8 +9,8 @@
     <%- include('../partials/header.ejs');  %>
 
     <div>
-        <b>Name:</b>
-        <%= info.name %>
+        <b>UserName:</b>
+        <%= info.username %>
     </div>
     <div>
         <b>
@@ -20,22 +20,25 @@
     </div>
     <div>
         <b>
-            Port:
+            Email:
         </b>
-        <%= info.port%>
+        <%= info.email%>
     </div>
     <div>
         <b>
-            Fleet ID:
+            Rights:
         </b>
-        <%=info.fleet_id%>
+        <%if (info.rights==0) {%>
+            Global
+        <%} else {%>
+            Domain
+        <%}%>
     </div>
-    <div>
-        <a href="/domains/edit/<%=info.id%>">Edit device list</a>
-    </div>
-    <div>
-        <a href="/domains/policy/add/<%=info.id%>">Define device policy</a>
-    </div>
+    <%if (info.rights!=0){%>
+        <div>
+            <a href="/users/edit/<%=info.id%>">Edit domain list</a>
+        </div>
+    <%}%>
 
     <button onclick="if(confirm('Are you sure you want to delete it?')){location.href = '/boards/all'}">
         Delete domain
